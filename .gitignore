@@ -244,3 +244,4 @@ _Pvt_Extensions
 #Solver output file
 output.txt
 multipleSolutions.txt
+costs.txt

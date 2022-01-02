@@ -6,12 +6,14 @@ namespace PtVzzlexMasCake.Tests
     [TestClass]
     public class PuzzleSolverTests
     {
-        const int baseTwoExponent = 16;
+        const int baseTwoExponent = 20;
 
         [TestMethod]
         public void PuzzleSolverTest()
         {
             using var sw = new StreamWriter("../../../multipleSolutions.txt");
+            using var sw2 = new StreamWriter("../../../costs.txt");
+
             var result = DijkstraSolver.SolveFull(baseTwoExponent);
 
             foreach (var item in result)
@@ -45,6 +47,11 @@ namespace PtVzzlexMasCake.Tests
                         }
                         sw.WriteLine();
                     }
+                }
+
+                if (true)
+                {
+                    sw2.WriteLine($"{item.Value} {item.Cost}");
                 }
             }
         }

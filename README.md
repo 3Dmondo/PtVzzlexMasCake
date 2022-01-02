@@ -51,3 +51,42 @@ No demonstration that the result is correct is provided,
 but the algorithm was tested for numbers up to 2 ^ 20 against a completely different mothodology, 
 and the two methodologies provide solutions with the same cost 
 (even if not always the same solutions as multiple optimal exist for a given input).
+
+## Worst case scenario
+![alt text](costs.png)
+
+The worst case is for numbers needing one "AddOne" or "SubtractOne" operation every two "Halve" operations, meaning 1.5 Log2(N) operations (the best case scenarion is obviously log2(N) operations).
+
+for example the number 699051 requires the folloqing sequence to reach one:
+
+```
+AddOne
+Halve
+Halve
+AddOne
+Halve
+Halve
+AddOne
+Halve
+Halve
+AddOne
+Halve
+Halve
+AddOne
+Halve
+Halve
+AddOne
+Halve
+Halve
+AddOne
+Halve
+Halve
+AddOne
+Halve
+Halve
+AddOne
+Halve
+Halve
+SubtractOne
+Halve
+```

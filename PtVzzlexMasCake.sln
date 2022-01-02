@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6E2BA7B5-4B99-466E-983C-CE6EADEA56EB}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		costs.png = costs.png
 		dotnet-install.ps1 = dotnet-install.ps1
 		dotnet-install.sh = dotnet-install.sh
 		README.md = README.md
