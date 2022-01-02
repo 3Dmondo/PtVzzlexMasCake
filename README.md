@@ -45,3 +45,9 @@ Solution examples (files with the "#.expected.txt" pattern) are provided in the 
 ## Tests
 cd PtVzzlexMasCake.Tests
 dotnet test
+
+## Remarks!
+No demonstration that the result is correct is provided, 
+but the algorithm was tested for numbers up to 2 ^ 20 against a completely different mothodology, 
+and the two methodologies provide solutions with the same cost 
+(even if not always the same solutions as multiple optimal exist for a given input).
