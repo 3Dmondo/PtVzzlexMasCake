@@ -62,6 +62,29 @@ namespace PtVzzlexMasCake.Tests
         }
 
         [TestMethod]
+        [DataRow(10)]
+        [DataRow(100)]
+        [DataRow(1000)]
+        [DataRow(10000)]
+        public void SolveBigNumber(int digits)
+        {
+            var r = new Random(0);
+            var s = new char[digits];
+            for (int i = 0; i < digits; i++)
+            {
+                s[i] = r.Next(10).ToString().First();
+            }
+            var value = BigInteger.Parse(new string(s));
+            var solution = PuzzleSolver.Solve(value);
+            var initialValue = value;
+            foreach (var operation in solution)
+            {
+                initialValue = Operator.Execute(operation, initialValue);
+            }
+            Assert.AreEqual(1, initialValue);
+        }
+
+        [TestMethod]
         public void FindAllSolutions()
         {
             var result = DijkstraSolver.FindAllSolutions(baseTwoExponent);
@@ -81,7 +104,10 @@ namespace PtVzzlexMasCake.Tests
             var interestingNodes = result; // result.Where(x => x.Value.Count == 1);
             foreach (var item in interestingNodes)
             {
-                drawingGraph.AddNode(item.Key.ToString()).LabelText = item.Key.ToString();
+                var node = new Microsoft.Msagl.Drawing.Node(item.Key.ToString());
+                node.LabelText = item.Key.ToString();
+                node.Label.FontColor = item.Key.IsEven ? Color.DarkGreen : Color.Red;
+                drawingGraph.AddNode(node);
             }
             foreach (var item in interestingNodes)
             {
@@ -106,7 +132,8 @@ namespace PtVzzlexMasCake.Tests
             {
                 // Ideally we should look at the drawing node attributes, and figure out, the required node size
                 // I am not sure how to find out the size of a string rendered in SVG. Here, we just blindly assign to each node a rectangle with width 60 and height 40, and round its corners.
-                n.GeometryNode.BoundaryCurve = CurveFactory.CreateRectangleWithRoundedCorners(60, 40, 3, 2, new Point(0, 0));
+                n.GeometryNode.BoundaryCurve = CurveFactory.CreateRectangleWithRoundedCorners(40, 40, 5, 5, new Point(0, 0)); // .CreateCircle(20, new Point(0, 0)); //
+
             }
 
             AssignLabelsDimensions(drawingGraph);
@@ -119,7 +146,7 @@ namespace PtVzzlexMasCake.Tests
             // In general, the label dimensions should depend on the viewer
             foreach (var na in drawingGraph.Nodes)
             {
-                na.Label.Width = na.Width * 0.6;
+                na.Label.Width = 40;
                 na.Label.Height = 40;
             }
 
@@ -127,8 +154,9 @@ namespace PtVzzlexMasCake.Tests
             foreach (var de in drawingGraph.Edges)
             {
                 // again setting the dimensions, that should depend on Drawing.Label and the viewer, blindly
-                de.Label.GeometryLabel.Width = 140;
-                de.Label.GeometryLabel.Height = 60;
+                de.Label.GeometryLabel.Width = 40;
+                de.Label.GeometryLabel.Height = 40;
+       
             }
         }
 
@@ -146,4 +174,5 @@ namespace PtVzzlexMasCake.Tests
             sw.Write(myStr);
         }
     }
+
 }

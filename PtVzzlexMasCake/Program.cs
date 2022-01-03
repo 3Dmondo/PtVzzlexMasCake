@@ -4,10 +4,25 @@ Runner.Run(args);
 
 public static class Runner
 {
-    public static string FileName { get; set; } = "output.txt"; 
+    public static string FileName { get; set; } = "output.txt";
+    const int digits = 1000;
     public static void Run(string[] args)
     {
-        var value = BigInteger.Parse(args[0]);
+        BigInteger value = 512;
+        if (args.Length == 1)
+        {
+            value = BigInteger.Parse(args[0]);
+        }
+        else
+        {
+            var r = new Random();
+            var s = new char[digits];
+            for (int i = 0; i < digits; i++)
+            {
+                s[i] = r.Next(10).ToString().First(); 
+            }
+            value = BigInteger.Parse(new string(s));
+        }
         var solution = PuzzleSolver.Solve(value);
         using var sw = new StreamWriter(FileName);
         sw.WriteLine(value.ToString());
