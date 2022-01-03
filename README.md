@@ -5,6 +5,7 @@ You have a lot of Christmas cakes – oh wtf I’ve just discovered now the Engl
 -	Add 1 xMas cake
 -	Remove 1 xMas cake
 -	Divide the entire group by 2 (ONLY IF you have an even number of xMAS cakes)
+
 Find a function that given the total beginning amount of xMAS cakes as a string containing up to 309 digits, will provide the minimum number of operations you need to reduce your starting group to 1 (example: you are given 8 xMas cakes, so halving 3 times you get 1)
 
 # Install .NET 6
