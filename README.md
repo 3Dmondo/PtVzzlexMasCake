@@ -91,5 +91,5 @@ Div
 Sub
 Div
 ```
-## Solution graph form numbers up to 64
-![Solution graph form numbers up to 64](graph.svg)
+## Solution graph (ALL efficient solutions displayed) form numbers up to 128
+![Solution graph form numbers up to 128](graph.svg)

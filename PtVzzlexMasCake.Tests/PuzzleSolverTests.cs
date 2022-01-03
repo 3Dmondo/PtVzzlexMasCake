@@ -11,7 +11,7 @@ namespace PtVzzlexMasCake.Tests
     [TestClass]
     public class PuzzleSolverTests
     {
-        const int baseTwoExponent = 20;
+        const int baseTwoExponent = 7;
 
         [TestMethod]
         public void PuzzleSolverTest()
