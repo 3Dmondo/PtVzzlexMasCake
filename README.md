@@ -23,6 +23,8 @@ dotnet run -- \<value\>
 
 the value must be a positive integer (arbitrarily large)
 
+if no argument is passed, a random number with 309 digits is used.
+
 ## Output
 A text file named "output.txt" with the following format:
 
