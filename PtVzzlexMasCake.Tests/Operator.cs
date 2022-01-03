@@ -8,11 +8,11 @@ namespace PtVzzlexMasCake.Tests
         {
             switch (operation)
             {
-                case Operation.Halve:
+                case Operation.Div:
                     return value / 2;
-                case Operation.AddOne:
+                case Operation.Add:
                     return value +1;
-                case Operation.SubtractOne:
+                case Operation.Sub:
                     return value -1;
                 default:
                     return value;

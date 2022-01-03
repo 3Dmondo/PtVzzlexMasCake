@@ -14,24 +14,24 @@ namespace PtVzzlexMasCake
             {
                 if (value.IsEven)
                 {
-                    solution.Add(Operation.Halve);
+                    solution.Add(Operation.Div);
                     value = value / 2;
                 }
                 else
                 {
                     if (value == 3)
                     {
-                        solution.Add(Operation.SubtractOne);
+                        solution.Add(Operation.Sub);
                         value = value - 1;
                     }
                     else if (((value + 1) / 2).IsEven)
                     {
-                        solution.Add(Operation.AddOne);
+                        solution.Add(Operation.Add);
                         value = value + 1;
                     }
                     else
                     {
-                        solution.Add(Operation.SubtractOne);
+                        solution.Add(Operation.Sub);
                         value = value - 1;
                     }
                 }

@@ -1,6 +1,6 @@
 11
-AddOne
-Halve
-Halve
-SubtractOne
-Halve
+Add
+Div
+Div
+Sub
+Div

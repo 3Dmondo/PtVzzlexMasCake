@@ -1,5 +1,5 @@
 7
-AddOne
-Halve
-Halve
-Halve
+Add
+Div
+Div
+Div

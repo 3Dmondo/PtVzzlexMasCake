@@ -35,5 +35,44 @@ namespace PtVzzlexMasCake.Tests
             }
             return extracted;
         }
+        internal static IDictionary<BigInteger, ICollection<ICollection<Operation>>> FindAllSolutions(int baseTwoExponent)
+        {
+            BigInteger maxValue = new BigInteger(1 << baseTwoExponent);
+            var extracted = new Dictionary<BigInteger, ICollection<ICollection<Operation>>>();
+            var costs = new Dictionary<BigInteger, int>();
+            var queue = new PriorityQueue<Node, int>();
+            var root = new Node(0, 1, new List<Operation>());
+            queue.Enqueue(root, root.Cost);
+            costs[root.Value] = 0;
+            while (queue.TryDequeue(out var current, out _))
+            {
+                ICollection<ICollection<Operation>> solutions;
+                if (!extracted.TryGetValue(current.Value, out solutions))
+                {
+                    solutions = new List<ICollection<Operation>>();
+                    solutions.Add(current.Operations);
+                    extracted.Add(current.Value, solutions);
+                }
+                else
+                {
+                    if (solutions.First().Count == current.Operations.Count) 
+                    {
+                        solutions.Add(current.Operations);
+                    }
+                }
+                foreach (Node node in current.Star())
+                {
+                    if ((!costs.TryGetValue(node.Value, out var prevCost) ||
+                        node.Cost <= prevCost) && node.Value <= maxValue)
+                    {
+                        costs[node.Value] = node.Cost;
+                        queue.Enqueue(node, node.Cost);
+                    }
+                }
+
+            }
+            return extracted;
+        }
     }
 }
+

@@ -32,11 +32,11 @@ one operation per line.
 
 the operation are:
 
-SubtractOne: current value - 1
+- Sub: current value - 1
 
-AddOne: current value + 1
+- Add: current value + 1
 
-Halve: current value / 2
+- Div: current value / 2
 
 the operations must be performed in sequence.
 
@@ -55,38 +55,40 @@ and the two methodologies provide solutions with the same cost
 ## Worst case scenario
 ![alt text](costs.png)
 
-The worst case is for numbers needing one "AddOne" or "SubtractOne" operation every two "Halve" operations, meaning 1.5 Log2(N) operations (the best case scenarion is obviously log2(N) operations).
+The worst case is for numbers needing one "Add" or "Sub" operation every two "Div" operations, meaning 1.5 Log2(N) operations (the best case scenarion is obviously log2(N) operations).
 
 for example the number 699051 requires the folloqing sequence to reach one:
 
 ```
-AddOne
-Halve
-Halve
-AddOne
-Halve
-Halve
-AddOne
-Halve
-Halve
-AddOne
-Halve
-Halve
-AddOne
-Halve
-Halve
-AddOne
-Halve
-Halve
-AddOne
-Halve
-Halve
-AddOne
-Halve
-Halve
-AddOne
-Halve
-Halve
-SubtractOne
-Halve
+Add
+Div
+Div
+Add
+Div
+Div
+Add
+Div
+Div
+Add
+Div
+Div
+Add
+Div
+Div
+Add
+Div
+Div
+Add
+Div
+Div
+Add
+Div
+Div
+Add
+Div
+Div
+Sub
+Div
 ```
+## Solution graph form numbers up to 64
+![Solution graph form numbers up to 64](graph.svg)

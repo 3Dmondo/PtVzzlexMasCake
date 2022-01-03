@@ -1,6 +1,6 @@
 13
-SubtractOne
-Halve
-Halve
-SubtractOne
-Halve
+Sub
+Div
+Div
+Sub
+Div

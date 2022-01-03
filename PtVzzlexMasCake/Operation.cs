@@ -2,9 +2,9 @@
 {
     internal enum Operation
     {
-        Halve,
-        AddOne,
-        SubtractOne
+        Div,
+        Add,
+        Sub
     }
 
     internal static class OperationExtensions
@@ -13,12 +13,12 @@
         {
             switch (operation)
             {
-                case Operation.AddOne:
-                    return nameof(Operation.AddOne);
-                case Operation.SubtractOne:
-                    return nameof(Operation.SubtractOne);
-                case Operation.Halve:
-                    return nameof(Operation.Halve);
+                case Operation.Add:
+                    return nameof(Operation.Add);
+                case Operation.Sub:
+                    return nameof(Operation.Sub);
+                case Operation.Div:
+                    return nameof(Operation.Div);
                 default:
                     return "";
             }

@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PtVzzlexMasCake", "PtVzzlexMasCake\PtVzzlexMasCake.csproj", "{3781B5B1-981A-4A30-B2CF-4FAA995CBCC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PtVzzlexMasCake.Tests", "PtVzzlexMasCake.Tests\PtVzzlexMasCake.Tests.csproj", "{5FE2CB57-39DE-4584-B033-10D2ECCE243A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PtVzzlexMasCake.Tests", "PtVzzlexMasCake.Tests\PtVzzlexMasCake.Tests.csproj", "{5FE2CB57-39DE-4584-B033-10D2ECCE243A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6E2BA7B5-4B99-466E-983C-CE6EADEA56EB}"
 	ProjectSection(SolutionItems) = preProject
@@ -13,6 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		costs.png = costs.png
 		dotnet-install.ps1 = dotnet-install.ps1
 		dotnet-install.sh = dotnet-install.sh
+		graph.svg = graph.svg
 		README.md = README.md
 	EndProjectSection
 EndProject
