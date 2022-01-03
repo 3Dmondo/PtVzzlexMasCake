@@ -5,10 +5,10 @@ Runner.Run(args);
 public static class Runner
 {
     public static string FileName { get; set; } = "output.txt";
-    const int digits = 1000;
+    const int digits = 309;
     public static void Run(string[] args)
     {
-        BigInteger value = 512;
+        BigInteger value = 0;
         if (args.Length == 1)
         {
             value = BigInteger.Parse(args[0]);
