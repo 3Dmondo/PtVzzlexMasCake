@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
+﻿using System.Numerics;
 
 namespace PtVzzlexMasCake
 {
@@ -10,7 +7,7 @@ namespace PtVzzlexMasCake
         public static List<Operation> Solve(BigInteger value)
         {
             var solution = new List<Operation>();
-            while (value != 1)
+            while (!value.IsOne)
             {
                 if (value.IsEven)
                 {

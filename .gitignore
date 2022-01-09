@@ -245,3 +245,5 @@ _Pvt_Extensions
 output.txt
 multipleSolutions.txt
 costs.txt
+
+*.Artifacts

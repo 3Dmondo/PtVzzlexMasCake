@@ -66,6 +66,7 @@ namespace PtVzzlexMasCake.Tests
         [DataRow(100)]
         [DataRow(1000)]
         [DataRow(10000)]
+        [DataRow(100000)]
         public void SolveBigNumber(int digits)
         {
             var r = new Random(0);

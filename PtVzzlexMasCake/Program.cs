@@ -1,6 +1,15 @@
 ﻿using PtVzzlexMasCake;
 using System.Numerics;
-Runner.Run(args);
+using BenchmarkDotNet.Running;
+
+if (args.Contains("-benchmark"))
+{
+    BenchmarkRunner.Run<Benchmark>();
+}
+else
+{
+    Runner.Run(args);
+}
 
 public static class Runner
 {
@@ -19,11 +28,11 @@ public static class Runner
             var s = new char[digits];
             for (int i = 0; i < digits; i++)
             {
-                s[i] = r.Next(10).ToString().First(); 
+                s[i] = r.Next(10).ToString().First();
             }
             value = BigInteger.Parse(new string(s));
         }
-        var solution = PuzzleSolver.Solve(value);
+        var solution = BinaryPuzzleSolver.Solve(value);
         using var sw = new StreamWriter(FileName);
         sw.WriteLine(value.ToString());
         foreach (var item in solution)
